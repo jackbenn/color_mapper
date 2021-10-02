@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 
 
+
 """
 For the first attempt, this will show two shades,
 and have someone pick the brightest.
@@ -30,7 +31,30 @@ class ColorMapper:
         ax.set_xlim(0, 2)
         ax.set_ylim(0, 1)
         ax.axis('off')
-        plt.show()
+        plt.show(block=False)
+    
+    def query_colors(self, c1, c2):
+        self.show_colors(c1, c2)
+        answer = input("Which is darker? (1 or 2) ")
+        while answer not in ('1', '2'):
+            answer = input("Please enter 1 or 2: ")
+        return int(answer)
+    
+    def choose_colors(self):
+        """Choose two colors based on current data"""
+
+    def run_trial(self, n):
+        for i in range(n):
+            c1, c2 = self.choose_colors()
+            answer = self.query_colors(c1, c2)
+            # add colors to dataset
+        
+        # save data to file
+        
+
+
+
+
 
 
 
